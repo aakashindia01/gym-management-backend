@@ -1,8 +1,8 @@
-from django.urls import path
-from . import views
-from django.http import HttpResponse
+# from django.urls import path
+# from . import views
+# from django.http import HttpResponse
 
-urlpatterns = [
-    path('', views.index, name='index'),
-    path('users/', views.hello_user, name='hello_user'),
-]
+# urlpatterns = [
+#     path('users/', views.CustomUserView.as_view()),
+#     path('users/<int:pk>', views.CustomUserView.as_view()),
+# ]

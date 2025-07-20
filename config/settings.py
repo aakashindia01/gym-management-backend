@@ -39,7 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # custom app
-    'apps.users'
+    'apps.users',
+    'apps.tenants',
+    'apps.accounts'
 ]
 
 MIDDLEWARE = [
@@ -126,4 +128,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # custom user model
-# AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL ="users.User"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
