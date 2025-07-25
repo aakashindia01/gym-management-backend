@@ -16,7 +16,7 @@ class SuperAdminRegisterView(generics.CreateAPIView):
 class TenantAdminRegisterView(generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = RegisterSerializer
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated, IsSuperAdmin]
     addedBy = None
 
     def perform_create(self, serializer):
@@ -38,3 +38,4 @@ class MemberRegisterView(generics.CreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(role='member', tenantId=self.request.user.tenantId, addedBy=self.request.user.email)
+
