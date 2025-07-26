@@ -42,7 +42,9 @@ INSTALLED_APPS = [
     # custom app
     'apps.users',
     'apps.tenants',
-    'apps.accounts'
+    'apps.accounts',
+    'apps.plans',
+    'apps.subscriptions',
 ]
 
 MIDDLEWARE = [

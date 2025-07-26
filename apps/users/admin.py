@@ -14,7 +14,7 @@ admin.site.index_title = "Welcome to FitVerse Gym Management System"
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('email', 'name', 'role', 'status', 'tenantId', 'addedOn')
+    list_display = ('memberId', 'name', 'role', 'status', 'tenantId', 'addedOn')
     list_filter = ('role', 'status', 'tenantId')
     search_fields = ('email', 'name', 'memberId', 'phone')
     ordering = ('-addedOn',)
